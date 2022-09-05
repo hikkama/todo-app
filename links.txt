@@ -1,5 +1,0 @@
-https://github.com/YaroslavTaranich/KATA-todo-app
-https://github.com/cadernews/todo-kata-react-core
-https://github.com/konzya/kata-react-todo
-https://habr.com/ru/company/simbirsoft/blog/652321/
-https://blog.logrocket.com/12-essential-eslint-rules-react/
