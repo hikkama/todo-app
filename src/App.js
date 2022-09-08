@@ -9,11 +9,6 @@ import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
-  const [time, setTime] = useState(true)
-
-  setInterval(() => {
-    setTime(!time)
-  }, 30000)
 
   const addTodoHandler = (text) => {
     const newTodo = {
