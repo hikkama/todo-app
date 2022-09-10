@@ -6,7 +6,7 @@
 
 .todo-list li {
   position: relative;
-  font-size: 24px;
+  font-size: 18px;
   border-bottom: 1px solid #ededed;
 }
 
@@ -75,15 +75,6 @@
   color: gray;
 }
 
-.todo-list li label .description {
-  word-break: break-all;
-  display: block;
-  line-height: 1.2;
-  transition: color 0.4s;
-  font-weight: 400;
-  color: #4d4d4d;
-}
-
 .todo-list li.completed label .description {
   color: #cdcdcd;
   text-decoration: line-through;
@@ -92,6 +83,7 @@
 .todo-list li label .description {
   font-size: 13px;
   color: gray;
+  display: flex;
 }
 
 .todo-list li .icon {
@@ -133,13 +125,13 @@
 
 .todo-list li .icon-pause,
 .todo-list li .icon-play {
-  font-size: 18px;
+  font-size: 15px;
   width: 18px;
   height: 18px;
 }
 
 .todo-list li .icon-play {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .icon-pause:after {

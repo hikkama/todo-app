@@ -9,13 +9,8 @@ import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
-  const [time, setTime] = useState(true)
 
-  setInterval(() => {
-    setTime(!time)
-  }, 30000)
-
-  const addTodoHandler = (text) => {
+  const addTodoHandler = ({ text, min, sec }) => {
     const newTodo = {
       text,
       id: uuidv4(),
@@ -23,6 +18,8 @@ function App() {
       isCompleted: false,
       isHidden: false,
       isEditing: false,
+      min: +min,
+      sec: +sec,
     }
     setTodos([...todos, newTodo])
   }
@@ -61,7 +58,7 @@ function App() {
         <TodosList
           todos={todos}
           deleteTodo={deleteTodoHandler}
-          toggleTodo={toggleCompletedHandler}
+          toggleCompletedTodo={toggleCompletedHandler}
           editTodo={editTodoHandler}
         />
         {todos.length > 0 && (

@@ -29,3 +29,7 @@
 .toggle-all:checked + label:before {
   color: #737373;
 }
+
+.timer {
+  margin-left: 7px;
+}
