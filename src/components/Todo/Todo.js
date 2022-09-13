@@ -25,7 +25,6 @@ function Todo({
   const stopwatchOffset = new Date()
   stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + sec + min * 60)
   const { start, pause, seconds, minutes, hours } = useStopwatch({ offsetTimestamp: stopwatchOffset })
-
   let classNames = 'view'
 
   if (isHidden) {

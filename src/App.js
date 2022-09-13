@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import { nanoid } from 'nanoid'
 
 import TodosList from './components/TodosList'
 import Footer from './components/Footer'
@@ -13,7 +13,7 @@ function App() {
   const addTodoHandler = ({ text, min, sec }) => {
     const newTodo = {
       text,
-      id: uuidv4(),
+      id: nanoid(),
       time: Date.now(),
       isCompleted: false,
       isHidden: false,
