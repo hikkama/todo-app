@@ -28,7 +28,10 @@ function App() {
   }
 
   const toggleCompletedHandler = (id) => {
-    setTodos(toggleProperty(id, todos, 'isCompleted'))
+    const elementIndex = todos.findIndex((el) => el.id === id)
+    todos[elementIndex].isCompleted = !todos[elementIndex].isCompleted
+
+    setTodos([...todos])
   }
 
   const displayCompletedTodosHandler = () => {

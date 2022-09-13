@@ -47,6 +47,7 @@ function Todo({
           onChange={() => {
             toggleTodo(id)
             pause()
+            setDisabled(false)
           }}
         />
         <label>
