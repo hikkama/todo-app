@@ -28,30 +28,31 @@ function App() {
   }
 
   const toggleCompletedHandler = (id) => {
-    const elementIndex = todos.findIndex((el) => el.id === id)
-    todos[elementIndex].isCompleted = !todos[elementIndex].isCompleted
-
-    setTodos([...todos])
+    setTodos((prev) => toggleProperty(id, prev, 'isCompleted'))
   }
 
   const displayCompletedTodosHandler = () => {
-    setTodos(todos.map((todo) => (todo.isCompleted ? { ...todo, isHidden: false } : { ...todo, isHidden: true })))
+    setTodos((prev) =>
+      prev.map((todo) => (todo.isCompleted ? { ...todo, isHidden: false } : { ...todo, isHidden: true }))
+    )
   }
 
   const displayActiveTodosHandler = () => {
-    setTodos(todos.map((todo) => (todo.isCompleted ? { ...todo, isHidden: true } : { ...todo, isHidden: false })))
+    setTodos((prev) =>
+      prev.map((todo) => (todo.isCompleted ? { ...todo, isHidden: true } : { ...todo, isHidden: false }))
+    )
   }
 
   const displayAllHandler = () => {
-    setTodos(todos.map((todo) => ({ ...todo, isHidden: false })))
+    setTodos((prev) => prev.map((todo) => ({ ...todo, isHidden: false })))
   }
 
   const deleteCompletedTodosHandler = () => {
-    setTodos(todos.filter((todo) => !todo.isCompleted))
+    setTodos((prev) => prev.filter((todo) => !todo.isCompleted))
   }
 
   const editTodoHandler = (id) => {
-    setTodos(toggleProperty(id, todos, 'isEditing'))
+    setTodos((prev) => toggleProperty(id, prev, 'isEditing'))
   }
 
   return (
