@@ -38,6 +38,7 @@ function Todo({
         <input
           type="checkbox"
           className="toggle"
+          checked={isCompleted}
           onChange={() => {
             toggleTodo(id)
             pause()
