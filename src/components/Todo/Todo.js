@@ -11,7 +11,6 @@ function Todo({
   id,
   deleteTodo,
   toggleTodo,
-  isHidden = false,
   isEditing = false,
   isCompleted = false,
   editTodo,
@@ -25,11 +24,6 @@ function Todo({
   const stopwatchOffset = new Date()
   stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + sec + min * 60)
   const { start, pause, seconds, minutes, hours } = useStopwatch({ offsetTimestamp: stopwatchOffset })
-  let classNames = 'view'
-
-  if (isHidden) {
-    classNames += ' hidden'
-  }
 
   function onKeyDown(e) {
     if (e.code === 'Enter') {
@@ -40,7 +34,7 @@ function Todo({
 
   return (
     <>
-      <div className={classNames}>
+      <div className="view">
         <input
           type="checkbox"
           className="toggle"
@@ -103,7 +97,6 @@ Todo.propTypes = {
   id: PropTypes.string.isRequired,
   deleteTodo: PropTypes.func.isRequired,
   toggleTodo: PropTypes.func.isRequired,
-  isHidden: PropTypes.bool,
   isEditing: PropTypes.bool,
   isCompleted: PropTypes.bool,
   editTodo: PropTypes.func.isRequired,

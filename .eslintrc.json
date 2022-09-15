@@ -23,7 +23,7 @@
   },
   "plugins": ["react", "prettier", "import"],
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2,{ "SwitchCase": 1 }],
     "max-len": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/control-has-associated-label": "off",

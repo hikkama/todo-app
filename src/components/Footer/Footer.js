@@ -12,6 +12,8 @@ function Footer({
   completedTodos,
   displayAll,
   displayActiveTodos,
+  filter,
+  filterChange,
 }) {
   return (
     <footer className="footer">
@@ -22,6 +24,8 @@ function Footer({
           activeTodos={deleteCompletedTodos}
           completedTodos={completedTodos}
           displayActiveTodos={displayActiveTodos}
+          filter={filter}
+          filterChange={filterChange}
         />
       </ul>
       {completedLength > 0 && (
@@ -40,6 +44,8 @@ Footer.propTypes = {
   completedTodos: PropTypes.func.isRequired,
   displayAll: PropTypes.func.isRequired,
   displayActiveTodos: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  filterChange: PropTypes.func.isRequired,
 }
 
 export default Footer

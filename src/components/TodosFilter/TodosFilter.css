@@ -66,33 +66,3 @@ html .clear-completed:active {
 .info a:hover {
   text-decoration: underline;
 }
-
-.container-radio-btn {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.container-radio-btn input[type='radio'] {
-  display: none;
-}
-
-.container-radio-btn label {
-  display: inline-block;
-  cursor: pointer;
-  color: inherit;
-  margin: 3px;
-  padding: 3px 7px;
-  text-decoration: none;
-  border: 1px solid transparent;
-  border-radius: 3px;
-}
-
-/* Checked */
-.container-radio-btn input[type='radio']:checked + label {
-  border-color: rgba(175, 47, 47, 0.2);
-}
-
-/* Hover */
-.container-radio-btn label:hover {
-  border-color: rgba(175, 47, 47, 0.2);
-}

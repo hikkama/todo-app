@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([])
+  const [filter, setFilter] = useState('all')
 
   const addTodoHandler = (text, min, sec) => {
     const newTodo = {
@@ -16,7 +17,6 @@ function App() {
       id: nanoid(),
       time: Date.now(),
       isCompleted: false,
-      isHidden: false,
       isEditing: false,
       min: +min,
       sec: +sec,
@@ -55,12 +55,33 @@ function App() {
     setTodos((prev) => toggleProperty(id, prev, 'isEditing'))
   }
 
+  const filterTodos = (items, filterWord) => {
+    switch (filterWord) {
+      case 'all':
+        return items
+
+      case 'active':
+        return items.filter((item) => !item.isCompleted)
+
+      case 'completed':
+        return items.filter((item) => item.isCompleted)
+      default:
+        return items
+    }
+  }
+
+  const filterChangeHandler = (filterWord) => {
+    setFilter(filterWord)
+  }
+
+  const visibleItems = filterTodos(todos, filter)
+
   return (
     <section className="todoapp">
       <Header title="todos" addTodo={addTodoHandler} />
       <section className="main">
         <TodosList
-          todos={todos}
+          todos={visibleItems}
           deleteTodo={deleteTodoHandler}
           toggleCompletedTodo={toggleCompletedHandler}
           editTodo={editTodoHandler}
@@ -73,6 +94,8 @@ function App() {
             completedTodos={displayCompletedTodosHandler}
             displayActiveTodos={displayActiveTodosHandler}
             displayAll={displayAllHandler}
+            filterChange={filterChangeHandler}
+            filter={filter}
           />
         )}
       </section>
