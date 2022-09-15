@@ -16,7 +16,7 @@ function TodosFilter({ filter, filterChange }) {
 
         return (
           <li key={name}>
-            <button type="button" className={isActive && 'selected'} onClick={() => filterChange(name)}>
+            <button type="button" className={isActive ? 'selected' : ''} onClick={() => filterChange(name)}>
               {label}
             </button>
           </li>
