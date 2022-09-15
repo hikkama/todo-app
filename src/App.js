@@ -10,7 +10,7 @@ import './App.css'
 function App() {
   const [todos, setTodos] = useState([])
 
-  const addTodoHandler = ({ text, min, sec }) => {
+  const addTodoHandler = (text, min, sec) => {
     const newTodo = {
       text,
       id: nanoid(),
