@@ -67,7 +67,7 @@ function App() {
         />
         {todos.length > 0 && (
           <Footer
-            activeLength={todos.length - todos.filter((todo) => todo.isCompleted).length}
+            activeLength={todos.filter((todo) => !todo.isCompleted).length}
             deleteCompletedTodos={deleteCompletedTodosHandler}
             completedLength={todos.filter((todo) => todo.isCompleted).length}
             completedTodos={displayCompletedTodosHandler}
